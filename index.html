@@ -8,6 +8,7 @@
     <style>
       body{
         margin: 99px;
+        background-color: snow
       }
       .carousel-control.right,.carousel-control.left{
         background-image: none;
@@ -18,13 +19,29 @@
         right: 0;
       }
 
+      .carousel-indicators {
+          bottom: -30px;
+          left: 0;
+          right:0;
+          width: auto;
+          margin-left: 0;
+          position: static;
+      }
+      .carousel-indicators li {
+          border: 1px solid #ccc;
+      }
+      .carousel-indicators .active {
+          background-color: #fff;
+      }
+
       .CarouselMulti{
         /*background: #eee;*/
       }
       .CarouselMulti *{
         box-sizing: border-box;
       }
-      .CarouselMulti, .CarouselMulti .carousel-inner, .CarouselMulti .item, .CM-Item, .CM-Thumb, .CM-Thumb:after{
+      /* SET THE HIGHT OR LET IMAGES DETERMINE */
+      .CarouselMulti .carousel-inner, .CarouselMulti .item, .CM-Item, .CM-Thumb{
         height: 300px;
       }
       .CarouselMulti .item{
@@ -43,7 +60,7 @@
       .CM-Thumb{
         display: inline-block;
         width: 100%;
-        padding:0 3px;
+        padding:0;
         background-color: #fff;
         border: 1px solid #ddd;
         border-radius: 4px;
@@ -54,126 +71,121 @@
           display: inline-block;
           vertical-align: middle;
           width: 0;
+          height: 100%;
       }
 
       .CM-Thumb img{
         display: inline-block;
         vertical-align: middle;
-        max-width: 100%;
-        max-height: 100%;
+        max-width:  97%;
+        max-height: 98%;
       }
 
       .CM-Panel{
         display: none;
         position: absolute;
         top: 0;
-        right:3%;
         bottom:0;
-        left:3%;
-        background-color: rgba(0, 0, 0, 0.85);
-        font-size: 15px;
-        line-height: 1;
-        color: #fff;
+        right:6%;
+        left:6%;
+        background-color: snow;
+        background-color: rgba(255, 250, 250, 0.90);
+        font-size: 14px;
+        line-height: 2;
         padding:20px 5px;
         border-radius: 4px;
-
+        border: 1px solid #ddd;
       }
-      .CM-Thumb:HOVER{
+      .CM-Thumb:hover{
         /*background-color: #bbb;*/
         outline: none;
       }
-      .CM-Thumb:HOVER .CM-Panel{
+      .CM-Thumb:hover img{
+        opacity: 0.5;
+      }
+      .CM-Thumb:hover .CM-Panel{
         display: block;
+      }
+      .CM-Panel:after {
+          content: '';
+          display: inline-block;
+          vertical-align: middle;
+          width: 0;
+          height: 100%;
+      }
+      .CM-PanelInner{
+        display: inline-block;
+        vertical-align: middle;
       }
     </style>
   </head>
   <body>
-    <div id="Carousel_Multi" class="carousel slide CarouselMulti" data-ride="carousel">
+    <div id="Carousel_Multi" class="carousel slide CarouselMulti" data-ride="carousel" data-interval="4444">
       <!-- Dot Indicators -->
-      <!-- <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol> -->
+      <ol class="carousel-indicators">
+        <li data-target="#Carousel_Multi" data-slide-to="0" class="active"></li>
+        <li data-target="#Carousel_Multi" data-slide-to="1"></li>
+        <li data-target="#Carousel_Multi" data-slide-to="2"></li>
+      </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
             <div class="CM-Item" >
-                <div class="CM-Thumb" tabindex="-1">
+                <div class="CM-Thumb">
                     <img src="//lorempixel.com/300/400/technics" alt=""/>
-                    <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+                    <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
                 </div>
             </div>
             <div class="CM-Item">
-                <div class="CM-Thumb" tabindex="-1">
+                <div class="CM-Thumb">
                     <img src="//lorempixel.com/800/300/technics" alt=""/>
-                    <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+                    <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
                 </div>
             </div>
             <div class="CM-Item">
-                <div class="CM-Thumb" tabindex="-1">
+                <div class="CM-Thumb">
                     <img src="//lorempixel.com/300/900/technics" alt=""/>
-                    <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+                    <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
                 </div>
             </div>
         </div>
         <div class="item">
           <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
+              <div class="CM-Thumb">
                   <img src="//lorempixel.com/400/400/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+                  <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
               </div>
           </div>
           <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
+              <div class="CM-Thumb">
                   <img src="//lorempixel.com/300/500/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+                  <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
               </div>
           </div>
           <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
+              <div class="CM-Thumb">
                   <img src="//lorempixel.com/300/600/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+                  <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
               </div>
           </div>
         </div>
         <div class="item">
           <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
+              <div class="CM-Thumb">
                   <img src="//lorempixel.com/200/400/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+                  <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
               </div>
           </div>
           <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
+              <div class="CM-Thumb">
                   <img src="//lorempixel.com/200/500/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+                  <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
               </div>
           </div>
           <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
+              <div class="CM-Thumb">
                   <img src="//lorempixel.com/200/600/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
-              </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
-                  <img src="//lorempixel.com/500/400/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
-              </div>
-          </div>
-          <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
-                  <img src="//lorempixel.com/600/200/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
-              </div>
-          </div>
-          <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
-                  <img src="//lorempixel.com/900/600/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+                  <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
               </div>
           </div>
         </div>
@@ -187,92 +199,72 @@
       </a>
     </div>
     <hr>
-    <div id="Carousel_Multi2" class="carousel CarouselMulti" data-ride="carousel">
+    <div id="Carousel_Multi2" class="carousel CarouselMulti" data-ride="carousel" data-interval="4444">
       <!-- Dot Indicators -->
-      <!-- <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol> -->
+      <ol class="carousel-indicators">
+        <li data-target="#Carousel_Multi2" data-slide-to="0" class="active"></li>
+        <li data-target="#Carousel_Multi2" data-slide-to="1"></li>
+        <li data-target="#Carousel_Multi2" data-slide-to="2"></li>
+      </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
             <div class="CM-Item" >
-                <div class="CM-Thumb" tabindex="-1">
-                    <img src="//lorempixel.com/g/300/400/technics" alt=""/>
-                    <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+                <div class="CM-Thumb">
+                    <img src="//lorempixel.com/g/300/400/city" alt=""/>
+                    <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
                 </div>
             </div>
             <div class="CM-Item">
-                <div class="CM-Thumb" tabindex="-1">
-                    <img src="//lorempixel.com/g/800/300/technics" alt=""/>
-                    <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+                <div class="CM-Thumb">
+                    <img src="//lorempixel.com/g/800/300/city" alt=""/>
+                    <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
                 </div>
             </div>
             <div class="CM-Item">
-                <div class="CM-Thumb" tabindex="-1">
-                    <img src="//lorempixel.com/g/300/900/technics" alt=""/>
-                    <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+                <div class="CM-Thumb">
+                    <img src="//lorempixel.com/g/300/900/city" alt=""/>
+                    <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
                 </div>
             </div>
         </div>
         <div class="item">
           <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
-                  <img src="//lorempixel.com/g/400/400/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+              <div class="CM-Thumb">
+                  <img src="//lorempixel.com/g/400/400/city" alt=""/>
+                  <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
               </div>
           </div>
           <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
-                  <img src="//lorempixel.com/g/300/500/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+              <div class="CM-Thumb">
+                  <img src="//lorempixel.com/g/300/500/city" alt=""/>
+                  <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
               </div>
           </div>
           <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
-                  <img src="//lorempixel.com/g/300/600/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
-              </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
-                  <img src="//lorempixel.com/g/200/400/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
-              </div>
-          </div>
-          <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
-                  <img src="//lorempixel.com/g/200/500/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
-              </div>
-          </div>
-          <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
-                  <img src="//lorempixel.com/g/200/600/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+              <div class="CM-Thumb">
+                  <img src="//lorempixel.com/g/300/600/city" alt=""/>
+                  <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
               </div>
           </div>
         </div>
         <div class="item">
           <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
-                  <img src="//lorempixel.com/g/500/400/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+              <div class="CM-Thumb">
+                  <img src="//lorempixel.com/g/200/400/city" alt=""/>
+                  <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
               </div>
           </div>
           <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
-                  <img src="//lorempixel.com/g/600/200/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+              <div class="CM-Thumb">
+                  <img src="//lorempixel.com/g/200/500/city" alt=""/>
+                  <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
               </div>
           </div>
           <div class="CM-Item">
-              <div class="CM-Thumb" tabindex="-1">
-                  <img src="//lorempixel.com/g/900/600/technics" alt=""/>
-                  <div class="CM-Panel"><p>CLICK TO LIKE</p><button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
+              <div class="CM-Thumb">
+                  <img src="//lorempixel.com/g/200/600/city" alt=""/>
+                  <div class="CM-Panel"><div class="CM-PanelInner"><div>CLICK TO LIKE</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-thumbs-up"></span></button><div>PRINT TO PDF</div><button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-print"></span></button></div></div>
               </div>
           </div>
         </div>
@@ -291,7 +283,11 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" charset="utf-8"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js" charset="utf-8"></script>
   <script>
-
+  //"use strict";
+  $.fn.carousel.defaults = {
+  interval: 500
+  , pause: 'hover'
+}
   </script>
   </body>
 </html>
